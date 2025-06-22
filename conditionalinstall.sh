@@ -11,7 +11,18 @@ else
     echo "Your are running with root access"
 fi
 
-dnf install wantederror mysql -y
+dnf list installed mysql
+if [ $? -ne 0]
+then    
+    echo "mysql not installed going to install"
+else
+    echo "mysql already installed nothing to do"
+fi
+
+
+
+#dnf install wantederror mysql -y
+dnf install mysql -y
 
 if [ $? -eq 0 ]
 then 
