@@ -10,6 +10,9 @@ then
 else
     echo "Your are running with root access"
 fi
+
+#-----------------------------------------
+
 Validate(){
     if [ $1 -eq 0 ]
      then 
