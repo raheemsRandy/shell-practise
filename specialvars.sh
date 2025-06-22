@@ -5,5 +5,5 @@ current dir :$PWD\n
 user : $USER\n
 home dir : $HOME\n
 pid of script :$$ \n
-`sleep 10 &`\n 
+$(sleep 10 &)\n 
 pid og last bg cmd :$!"
