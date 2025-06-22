@@ -5,4 +5,4 @@ num2=200
 
 sum=$(($num1+$num2))
 timestamp=$(date)
-echo "sum is : $sum"
+echo "Script executed at $timestamp \ sum is : $sum"
