@@ -35,17 +35,17 @@ fi
 
 #----------------------------------------------
 
-dnf list installed python
+dnf list installed python3
 if [ $? -ne 0 ]
 then    
-    echo "python not installed going to install"
+    echo "python3 not installed going to install"
 
     #dnf install wantederror mysql -y
-    dnf install python -y
-    Validate $? python
+    dnf install python3 -y
+    Validate $? python3
 
 else
-    echo "python already installed nothing to do"
+    echo "python3 already installed nothing to do"
 fi
 
 #-----------------------------------------------------------
