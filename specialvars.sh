@@ -1,0 +1,1 @@
+echo -e "all vars passed :$@\n no of vars :$#"
