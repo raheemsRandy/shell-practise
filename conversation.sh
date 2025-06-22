@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Trump : wat r u doing "
-echo "Musk : iam building rocket to mars"
-echo "Musk : We are planning Trump and Musk company"
+
+p1 = "Trump"  
+p2 = "Musk""
+echo "$p1 : wat r u doing "
+echo "$p2 : iam building rocket to mars"
+echo "$p2 : And We are planning $p1 and $p2 company"
 
