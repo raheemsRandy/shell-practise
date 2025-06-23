@@ -4,10 +4,10 @@
 
 #echo -e "\e[31m Hello word\e[0m\nHelloworld"
 userId=$(id -u)
-R=\e[31m
-G=\e[32m
-Y=\e[33m
-N=\e[0m
+R=[\e31m
+G=[\e32m
+Y=[\e33m
+N=[\e0m
 
 if [ $userId -ne 0 ]
 then 
