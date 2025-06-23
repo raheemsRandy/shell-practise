@@ -69,5 +69,5 @@ then
     Validate $? nginx
 
 else
-    echo "$Y nginx already installed nothing to do$N"
+    echo -e "$Y nginx already installed nothing to do$N "
 fi
