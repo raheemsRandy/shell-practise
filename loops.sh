@@ -44,7 +44,8 @@ Validate(){
 
 #------------------------------------------------------
 
-for i in ${Packages[@]}
+# for i in ${Packages[@]}
+for i in {$@}
 do
     dnf list installed $i&>>$Log_file
     if [ $? -ne 0 ]
