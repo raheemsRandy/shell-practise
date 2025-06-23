@@ -10,7 +10,7 @@ Y="\e[33m"
 N="\e[0m"
 Logs_folder="/var/log/shellscript-logs"
 Script_name=$(echo $0 | cu -d "." -f1) 
-Log_file= "$Logs_folder/$Script_name.log"
+Log_file="$Logs_folder/$Script_name.log"
 
 mkdir -p $Logs_folder
 echo "Script started at: $(date)" &>>$Log_file
