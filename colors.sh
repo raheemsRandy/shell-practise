@@ -11,10 +11,10 @@ N=\e[0m
 
 if [ $userId -ne 0 ]
 then 
-    echo -e "$R please run this command with root access$N"
+    echo -e "$R please run this command with root access $N"
     exit 1
 else
-    echo -e "$R Your are running with root access$N"
+    echo -e "$G Your are running with root access $N"
 fi
 
 #-----------------------------------------
@@ -24,7 +24,7 @@ Validate(){
      then 
         echo -e "Installing $2 .....$G Success $N"
      else
-        echo -e "Installing $2 .....$R Failure$N"
+        echo -e "Installing $2 .....$R Failure $N"
         exit 1
     fi
 }

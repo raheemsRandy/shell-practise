@@ -67,6 +67,7 @@ else
 fi
 
 
+#------------------------------------------------------------
 # #dnf install wantederror mysql -y
 # dnf install mysql -y
 
