@@ -4,7 +4,7 @@
 User_id=$(id -u)
 Source_dir=$1
 Dest_dir=$2
-Days=$(3:-14) #default 14 days
+Days=${3:-14} #default 14 days
 
 userId=$(id -u)
 R="\e[31m"
@@ -70,6 +70,23 @@ Files=$(find $Source_dir -name "*.log" -mtime +$Days)
 if [ ! -z $Files ]
 then
     echo "Files to Zip are : $Files"
+    Timestamp=$(date +%F-%H-%M-%S)
+    Zip_files="$Dest_dir/app-logs-$Timestamp.Zip"
+    echo $Files | zip -@ $Zip_File
+
+    if [ -f $Zip_File ]
+    then
+        echo "Successfully created zip file"
+        while IFS= read -r filepath
+        do
+            echo "Deleting file: $filepath"
+            rm -rf $filepath
+
+        done <<< $Files
+        echo "Logs files older than $Days are removed from source directory ....Success"
+    else
+        echo -e "Zip file creation .....Failure"
+        exit 1
 else
     echo "No log files found older than 14 days ......Skipping"
 
