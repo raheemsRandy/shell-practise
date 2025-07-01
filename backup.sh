@@ -71,7 +71,7 @@ if [ ! -z $Files ]
 then
     echo "Files to Zip are : $Files"
     Timestamp=$(date +%F-%H-%M-%S)
-    Zip_files="$Dest_dir/app-logs-$Timestamp.Zip"
+    Zip_file="$Dest_dir/app-logs-$Timestamp.Zip"
     echo $Files | zip -@ $Zip_File
 
     if [ -f $Zip_File ]
