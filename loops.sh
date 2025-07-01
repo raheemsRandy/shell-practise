@@ -50,14 +50,14 @@ do
     dnf list installed $i&>>$Log_file
     if [ $? -ne 0 ]
     then    
-        echo "$i not installed going to install"| tee -a $Log_file
+        echo "$i not installed going to install" | tee -a $Log_file
 
         #dnf install wantederror mysql -y
         dnf install $i -y&>>$Log_file
         Validate $? $i
     else
-        echo -e "$Y $i already installed nothing to do$N"| tee -a $Log_file
-    fi
+        echo -e "$Y $i already installed nothing to do $N"| tee -a $Log_file
+    fi   
 done
 
 
