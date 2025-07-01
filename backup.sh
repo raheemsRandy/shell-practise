@@ -60,7 +60,7 @@ then
     exit 1
 fi
 
-if [ -d $Dest_dir ]
+if [ ! -d $Dest_dir ]
 then    
     echo "$Dest_dir not exists"
     exit 1
