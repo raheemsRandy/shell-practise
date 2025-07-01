@@ -48,6 +48,7 @@ mkdir -p $Logs_folder
 Usage(){
     ech0 -e "$R Usage : $N sh backup.sh <source-dir> <dest-dir> <days>(optional)"
 }
+
 if [ $# -lt 1 ]
 then
     Usage
@@ -67,6 +68,7 @@ then
 fi
 
 Files=$(find $Source_dir -name "*.log" -mtime +$Days)
+
 if [ ! -z $Files ]
 then
     echo "Files to Zip are : $Files"
