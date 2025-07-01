@@ -89,6 +89,7 @@ then
         exit 1
 else
     echo "No log files found older than 14 days ......Skipping"
+fi
 
 
 
