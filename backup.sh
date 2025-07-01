@@ -28,7 +28,7 @@ Validate(){
     fi
 }
 
-
+check_root(){
 if [ $userId -ne 0 ]
 then 
     echo -e "$R please run this command with root access $N" | tee -a $Log_file
@@ -36,6 +36,7 @@ then
 else
     echo -e "$G Your are running with root access $N"  | tee -a $Log_file
 fi
+}
 
 
 check_root
@@ -47,13 +48,13 @@ mkdir -p $Logs_folder
 Usage(){
     ech0 -e "$R Usage : $N sh backup.sh <source-dir> <dest-dir> <days>(optional)"
 }
-if [ $# -lt 1]
+if [ $# -lt 1 ]
 then
     Usage
 fi
 
 
-if [ -d $Source_dir ]
+if [ ! -d $Source_dir ]
 then    
     echo "$Source_dir not exists"
     exit 1
@@ -64,6 +65,13 @@ then
     echo "$Dest_dir not exists"
     exit 1
 fi
+
+Files=$(find $Source_dir -name "*.log" -mtime +$Days)
+if [ ! -z $Files ]
+then
+    echo "Files to Zip are : $Files"
+else
+    echo "No log files found older than 14 days ......Skipping"
 
 
 
