@@ -14,8 +14,8 @@ N="\e[0m"
 
 Logs_folder="/var/log/shellscript-logs"
 Script_name=$(echo $0)
-Log_file="$Logs_folder/$Script_name.log"
-Source_dir=/home/ec2-user/app-logs
+Log_file="$Logs_folder/backup.log"
+#Source_dir=/home/ec2-user/app-logs
 
 
 Validate(){
@@ -74,7 +74,8 @@ then
     echo "Files to Zip are : $Files"
     Timestamp=$(date +%F-%H-%M-%S)
     Zip_file="$Dest_dir/app-logs-$Timestamp.zip"
-    echo $Files | zip -@ $Zip_file
+    #echo $Files | zip -@ $Zip_file   works for only single file
+    echo "$Files | tr ' ' '\n' | zip -@ "Zip_file"
 
     if [ -f $Zip_file ]
     then
