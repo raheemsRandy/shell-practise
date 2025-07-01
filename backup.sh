@@ -71,15 +71,15 @@ if [ ! -z $Files ]
 then
     echo "Files to Zip are : $Files"
     Timestamp=$(date +%F-%H-%M-%S)
-    Zip_file="$Dest_dir/app-logs-$Timestamp.Zip"
-    echo $Files | zip -@ $Zip_File
+    Zip_file="$Dest_dir/app-logs-$Timestamp.zip"
+    echo $Files | zip -@ $Zip_file
 
-    if [ -f $Zip_File ]
+    if [ -f $Zip_file ]
     then
         echo "Successfully created zip file"
         while IFS= read -r filepath
         do
-            echo "Deleting file: $filepath"
+            echo "Deleting file: $filepath" | tee -a $Log_file
             rm -rf $filepath
 
         done <<< $Files
