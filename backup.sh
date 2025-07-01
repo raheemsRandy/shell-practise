@@ -69,13 +69,13 @@ fi
 
 Files=$(find $Source_dir -name "*.log" -mtime +$Days)
 
-if [ ! -z $Files ]
+if [ ! -z "$Files" ]
 then
     echo "Files to Zip are : $Files"
     Timestamp=$(date +%F-%H-%M-%S)
     Zip_file="$Dest_dir/app-logs-$Timestamp.zip"
     #echo $Files | zip -@ $Zip_file   works for only single file
-    echo "$Files | tr ' ' '\n' | zip -@ "Zip_file""
+    echo "$Files | tr ' ' '\n' | zip -@ "Zip_file"""
 
     if [ -f $Zip_file ]
     then
