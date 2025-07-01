@@ -9,7 +9,7 @@ Logs_folder="/var/log/shellscript-logs"
 Script_name=$(echo $0)
 Log_file="$Logs_folder/$Script_name.log"
 Source_dir=/home/ec2-user/app-logs
-
+mkdir -p $Logs_folder
 
 
 
@@ -36,7 +36,7 @@ Validate(){
     fi
 }
 
-mkdir -p $Logs_folder
+
 
 echo "Script started at: $(date)"  | tee -a $Log_file
 
